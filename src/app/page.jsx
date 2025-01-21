@@ -41,7 +41,7 @@ const slides = [
 export default function Home() {
 
   return (
-    <div className="w-full h-screen p-5">
+    <div className="w-full h-screen p-5 flex items-center">
       <div className="mt-14 max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] shadow-xl rounded-lg overflow-hidden">
         {/* Left Section */}
         <div className="left-section w-[43%] max-h-[800px] hidden lg:flex flex-col  p-6 bg-blue-600 text-white relative">
