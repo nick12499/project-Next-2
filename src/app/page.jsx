@@ -1,9 +1,9 @@
-'use client';
+'use client'
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash } from "@fortawesome/duotone-light-svg-icons";
 import { Noto_Sans_Thai } from "next/font/google";
-
+import PasswordInput from "./PasswordInput/page";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,19 +18,21 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 
+
+
 const slides = [
   {
-    src: "/assets/image/slide.png",
+    src: "/assets/image/slide1.png",
     title: "Speedy, Easy, and Fast",
     description: "Overpay helps you set saving goals, earn cashback offers, and get paychecks up to two days early.",
   },
   {
-    src: "/assets/image/slide.png",
+    src: "/assets/image/slide2.png",
     title: "Save Smarter",
     description: "Enjoy the benefits of smarter savings with Overpay.",
   },
   {
-    src: "/assets/image/slide.png",
+    src: "/assets/image/slide3.png",
     title: "Your Financial Partner",
     description: "We help you reach your financial goals quickly and efficiently.",
   },
@@ -39,10 +41,10 @@ const slides = [
 export default function Home() {
 
   return (
-    <div className="max-w-[1200px] mx-auto h-screen p-5">
-      <div className="mt-14 flex flex-col lg:flex-row lg:h-[80%] shadow-xl rounded-lg overflow-hidden">
+    <div className="w-full h-screen p-5">
+      <div className="mt-14 max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] shadow-xl rounded-lg overflow-hidden">
         {/* Left Section */}
-        <div className="left-section w-[43%] hidden lg:flex h-full flex-col justify-between p-6 bg-blue-600 text-white relative">
+        <div className="left-section w-[43%] max-h-[800px] hidden lg:flex flex-col  p-6 bg-blue-600 text-white relative">
           {/* Logo Section */}
           <div className="flex justify-start mb-4">
             <Image src={'/assets/image/logo1.jpg'} alt="" width={40} height={40} className=" rounded-lg mr-4" /><h1 className="text-2xl font-bold">JIB Dashboard</h1>
@@ -67,16 +69,15 @@ export default function Home() {
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative flex flex-col items-center justify-center h-full">
+                  <div className="relative flex flex-col items-center h-full">
                     {/* Main Card Section */}
-                    <div className="h-full relative w-full">
+                    <div className="h-[60%] relative mt-10 w-[80%]">
                       {/* Graph Section */}
                       <Image
                         src={slide.src}
                         alt="Graph"
-                        width={300}
-                        height={150}
-                        className="rounded-lg w-full h-[450px]"
+                        fill
+                        className="rounded-lg"
                       />
                     </div>
 
@@ -134,7 +135,7 @@ export default function Home() {
 
         {/* Right Section */}
         <div className={`${notoSansThai.className} right-section lg:w-[57%] bg-white`} >
-          <div className="max-w-md mx-auto w-full bg-white py-8 px-10 mb-10">
+          <div className="max-w-md mx-auto bg-white py-8 px-10 mb-10">
             {/* Header */}
             <div className="text-center">
               <div className="w-full flex justify-center">
@@ -199,19 +200,10 @@ export default function Home() {
                 placeholder="Email"
                 className="w-full border rounded-md py-2 px-4 text-sm"
               />
-              <div className="relative">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="w-full border rounded-md py-2 px-4 text-sm"
-                />
-                <button
-                  type="button"
-                  className="absolute inset-y-0 right-3 flex items-center text-gray-500"
-                >
-                  <FontAwesomeIcon icon={faEyeSlash} />
-                </button>
-              </div>
+
+
+              <PasswordInput />
+
               <div className="flex justify-between">
                 <div className="flex items-center">
                   {/* Custom Checkbox */}
