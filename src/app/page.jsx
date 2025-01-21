@@ -258,7 +258,7 @@ export default function Home() {
 
           <div className="flex justify-between items-center px-8 mb-3">
             <p className="text-sm text-gray-500">Privacy Policy</p>
-            <p className="text-sm text-gray-500">Copyright2022</p>
+            <p className="text-sm text-gray-500">Copyright2025</p>
           </div>
         </div>
       </div>
