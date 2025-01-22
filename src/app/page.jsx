@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="w-full h-screen p-5 flex items-center">
       <div className="flex-1">
-        <div className="mt-14 max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] lg:shadow-xl rounded-lg overflow-hidden">
+        <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] lg:shadow-xl rounded-lg overflow-hidden">
           {/* Left Section */}
           <div className="left-section w-[43%] max-h-[800px] hidden lg:flex flex-col  p-6 bg-blue-600 text-white relative">
             {/* Logo Section */}
@@ -136,7 +136,7 @@ export default function Home() {
 
           {/* Right Section */}
           <div className={`${notoSansThai.className} right-section w-full lg:w-[57%] bg-white`} >
-            <div className="max-w-[800px] lg:max-w-md mx-auto bg-white py-0 lg:py-8 px-3 lg:px-10 mb-10">
+            <div className="max-w-[800px] lg:max-w-md mx-auto bg-white py-0 lg:py-8 px-3 lg:px-10 mb-3 lg:mb-10">
               {/* Header */}
               <div className="text-center">
                 <div className="w-full flex justify-center">
@@ -257,9 +257,9 @@ export default function Home() {
 
             </div>
 
-            <div className="flex justify-between items-center px-8 mb-3">
-              <p className="text-sm text-gray-500">Privacy Policy</p>
-              <p className="text-sm text-gray-500">Copyright2025</p>
+           <div className="flex justify-between items-center px-8 mb-3">
+              <p className="text-[12px] sm:text-sm text-gray-500">Privacy Policy</p>
+              <p className="text-[12px] sm:text-sm text-gray-500">Copyright2025</p>
             </div>
           </div>
         </div>
