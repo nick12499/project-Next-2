@@ -157,7 +157,7 @@ export default function Home() {
                     height={20}
                   />
 
-                  <p className="text-[9px] sm:text-sm">Sign In with Google</p>
+                  <p className="text-[12px] sm:text-sm">Sign In with Google</p>
                 </button>
                 <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium mt-3 md:mt-0">
                   <Image
@@ -167,7 +167,7 @@ export default function Home() {
                     width={20}
                     height={20}
                   />
-                  <p className="text-[9px] sm:text-sm">Sign In with Apple</p>
+                  <p className="text-[12px] sm:text-sm">Sign In with Apple</p>
                 </button>
                 <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium">
                   <Image
@@ -178,7 +178,7 @@ export default function Home() {
                     height={20}
                   />
 
-                  <p className="text-[9px] sm:text-sm">Sign In Microsoft
+                  <p className="text-[12px] sm:text-sm">Sign In Microsoft
                   </p>
                 </button>
               </div>
