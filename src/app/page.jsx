@@ -42,58 +42,59 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen p-5 flex items-center">
-      <div className="mt-14 max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] shadow-xl rounded-lg overflow-hidden">
-        {/* Left Section */}
-        <div className="left-section w-[43%] max-h-[800px] hidden lg:flex flex-col  p-6 bg-blue-600 text-white relative">
-          {/* Logo Section */}
-          <div className="flex justify-start mb-4">
-            <Image src={'/assets/image/logo1.jpg'} alt="" width={40} height={40} className=" rounded-lg mr-4" /><h1 className="text-2xl font-bold">JIB Dashboard</h1>
-          </div>
+      <div className="flex-1">
+        <div className="mt-14 max-w-[1300px] mx-auto flex flex-col lg:flex-row max-h-[800px] lg:shadow-xl rounded-lg overflow-hidden">
+          {/* Left Section */}
+          <div className="left-section w-[43%] max-h-[800px] hidden lg:flex flex-col  p-6 bg-blue-600 text-white relative">
+            {/* Logo Section */}
+            <div className="flex justify-start mb-4">
+              <Image src={'/assets/image/logo1.jpg'} alt="" width={40} height={40} className=" rounded-lg mr-4" /><h1 className="text-2xl font-bold">JIB Dashboard</h1>
+            </div>
 
-          {/* Swiper Slider */}
-          <div className="flex flex-col items-center justify-center relative h-full">
             {/* Swiper Slider */}
-            <Swiper
-              pagination={{
-                clickable: true,
-                renderBullet: (index, className) =>
-                  `<span class="${className} custom-pagination"></span>`,
-              }}
+            <div className="flex flex-col items-center justify-center relative h-full">
+              {/* Swiper Slider */}
+              <Swiper
+                pagination={{
+                  clickable: true,
+                  renderBullet: (index, className) =>
+                    `<span class="${className} custom-pagination"></span>`,
+                }}
 
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              modules={[Pagination, Autoplay]}
-              className="w-full h-full"
-            >
-              {slides.map((slide, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative flex flex-col items-center h-full">
-                    {/* Main Card Section */}
-                    <div className="h-[60%] relative mt-10 w-[80%]">
-                      {/* Graph Section */}
-                      <Image
-                        src={slide.src}
-                        alt="Graph"
-                        fill
-                        className="rounded-lg"
-                      />
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                modules={[Pagination, Autoplay]}
+                className="w-full h-full"
+              >
+                {slides.map((slide, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative flex flex-col items-center h-full">
+                      {/* Main Card Section */}
+                      <div className="h-[60%] relative mt-10 w-[80%]">
+                        {/* Graph Section */}
+                        <Image
+                          src={slide.src}
+                          alt="Graph"
+                          fill
+                          className="rounded-lg"
+                        />
+                      </div>
+
+                      {/* Footer Section */}
+                      <div className="absolute top-[75%] flex flex-col items-center mt-2">
+                        <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
+                        <p className="text-center text-sm max-w-md">
+                          {slide.description}
+                        </p>
+                      </div>
                     </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-                    {/* Footer Section */}
-                    <div className="absolute top-[75%] flex flex-col items-center mt-2">
-                      <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
-                      <p className="text-center text-sm max-w-md">
-                        {slide.description}
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <style jsx global>{`
+              <style jsx global>{`
             .custom-pagination {
               display: inline-block;
               position: relative;
@@ -128,137 +129,138 @@ export default function Home() {
               margin-top: 20px;
             }
       `}</style>
-          </div>
-
-        </div>
-
-
-        {/* Right Section */}
-        <div className={`${notoSansThai.className} right-section lg:w-[57%] bg-white`} >
-          <div className="max-w-md mx-auto bg-white py-8 px-10 mb-10">
-            {/* Header */}
-            <div className="text-center">
-              <div className="w-full flex justify-center">
-                <Image src={'/assets/image/logo1.jpg'} alt="" width={60} height={60} className=" rounded-lg" />
-              </div>
-              <h2 className="text-xl sm:text-2xl font-semibold mb-2">เข้าสู่ระบบ "แดชบอร์ด JIB"</h2>
-              <p className="text-sm text-gray-500">ระบบรายงานข้อมูล และ AI strategy</p>
             </div>
-
-            {/* Social Sign-Up Buttons */}
-            <div className="mt-6 flex flex-col space-y-4">
-              <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium">
-                <Image
-                  src="/assets/image/Google__G__logo.svg.jpg"
-                  alt="Logo"
-                  className="mr-2"
-                  width={20}
-                  height={20}
-                />
-
-                <p className="text-[9px] sm:text-sm">Sign In with Google</p>
-              </button>
-              <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium mt-3 md:mt-0">
-                <Image
-                  src="/assets/image/572947.jpg"
-                  alt="Logo"
-                  className="mr-2"
-                  width={20}
-                  height={20}
-                />
-                <p className="text-[9px] sm:text-sm">Sign In with Apple</p>
-              </button>
-              <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium">
-                <Image
-                  src="/assets/image/micrologo.jpg"
-                  alt="Logo"
-                  className="mr-2"
-                  width={20}
-                  height={20}
-                />
-
-                <p className="text-[9px] sm:text-sm">Sign In Microsoft
-                </p>
-              </button>
-            </div>
-
-
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or with email</span>
-              </div>
-            </div>
-
-            {/* Form */}
-            <form className="space-y-4">
-
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full border rounded-md py-2 px-4 text-sm"
-              />
-
-
-              <PasswordInput />
-
-              <div className="flex justify-between">
-                <div className="flex items-center">
-                  {/* Custom Checkbox */}
-                  <label className="relative inline-flex items-center cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="hidden peer" // ซ่อน checkbox ดั้งเดิม
-                    />
-                    <div className="w-5 h-5 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600">
-                      {/* เครื่องหมายเช็ค */}
-                      <svg
-                        className="w-3 h-3 text-white peer-checked:opacity-100 transition-opacity duration-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </div>
-                  </label>
-                  <a href="#" className="ml-2 font-medium text-[12px] sm:text-[14px]">
-                    Remember me
-                  </a>
-                </div>
-                <div className="forgot-pas">
-                  <a href="#" className="text-sm text-blue-600 sm:text-[14px]">Forgot Password?</a>
-                </div>
-              </div>
-
-
-
-
-              <button className="w-full bg-[#0000ae] text-white py-2 rounded-md text-sm font-medium">
-                Sign In
-              </button>
-            </form>
-
-            {/* Terms and Links */}
-
-            <p className="text-center text-sm mt-4">
-              Don't have an account?{" "}
-              <a href="#" className="text-blue-600 font-medium">
-                Sign Up
-              </a>
-            </p>
 
           </div>
 
-          <div className="flex justify-between items-center px-8 mb-3">
-            <p className="text-sm text-gray-500">Privacy Policy</p>
-            <p className="text-sm text-gray-500">Copyright2025</p>
+
+          {/* Right Section */}
+          <div className={`${notoSansThai.className} right-section w-full lg:w-[57%] bg-white`} >
+            <div className="max-w-[800px] lg:max-w-md mx-auto bg-white py-0 lg:py-8 px-3 lg:px-10 mb-10">
+              {/* Header */}
+              <div className="text-center">
+                <div className="w-full flex justify-center">
+                  <Image src={'/assets/image/logo1.jpg'} alt="" width={60} height={60} className=" rounded-lg" />
+                </div>
+                <h2 className="text-xl sm:text-2xl font-semibold mb-2">เข้าสู่ระบบ "แดชบอร์ด JIB"</h2>
+                <p className="text-sm text-gray-500">ระบบรายงานข้อมูล และ AI strategy</p>
+              </div>
+
+              {/* Social Sign-Up Buttons */}
+              <div className="mt-6 flex flex-col space-y-4">
+                <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium">
+                  <Image
+                    src="/assets/image/Google__G__logo.svg.jpg"
+                    alt="Logo"
+                    className="mr-2"
+                    width={20}
+                    height={20}
+                  />
+
+                  <p className="text-[9px] sm:text-sm">Sign In with Google</p>
+                </button>
+                <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium mt-3 md:mt-0">
+                  <Image
+                    src="/assets/image/572947.jpg"
+                    alt="Logo"
+                    className="mr-2"
+                    width={20}
+                    height={20}
+                  />
+                  <p className="text-[9px] sm:text-sm">Sign In with Apple</p>
+                </button>
+                <button className="w-full flex items-center justify-center border rounded-md py-2 text-sm font-medium">
+                  <Image
+                    src="/assets/image/micrologo.jpg"
+                    alt="Logo"
+                    className="mr-2"
+                    width={20}
+                    height={20}
+                  />
+
+                  <p className="text-[9px] sm:text-sm">Sign In Microsoft
+                  </p>
+                </button>
+              </div>
+
+
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-300"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white text-gray-500">Or with email</span>
+                </div>
+              </div>
+
+              {/* Form */}
+              <form className="space-y-4">
+
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full border rounded-md py-2 px-4 text-sm"
+                />
+
+
+                <PasswordInput />
+
+                <div className="flex justify-between">
+                  <div className="flex items-center">
+                    {/* Custom Checkbox */}
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="hidden peer" // ซ่อน checkbox ดั้งเดิม
+                      />
+                      <div className="w-5 h-5 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600">
+                        {/* เครื่องหมายเช็ค */}
+                        <svg
+                          className="w-3 h-3 text-white peer-checked:opacity-100 transition-opacity duration-300"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </div>
+                    </label>
+                    <a href="#" className="ml-2 font-medium text-[12px] sm:text-[14px]">
+                      Remember me
+                    </a>
+                  </div>
+                  <div className="forgot-pas">
+                    <a href="#" className="text-sm text-blue-600 sm:text-[14px]">Forgot Password?</a>
+                  </div>
+                </div>
+
+
+
+
+                <button className="w-full bg-[#0000ae] text-white py-2 rounded-md text-sm font-medium">
+                  Sign In
+                </button>
+              </form>
+
+              {/* Terms and Links */}
+
+              <p className="text-center text-sm mt-4">
+                Don't have an account?{" "}
+                <a href="#" className="text-blue-600 font-medium">
+                  Sign Up
+                </a>
+              </p>
+
+            </div>
+
+            <div className="flex justify-between items-center px-8 mb-3">
+              <p className="text-sm text-gray-500">Privacy Policy</p>
+              <p className="text-sm text-gray-500">Copyright2025</p>
+            </div>
           </div>
         </div>
       </div>
